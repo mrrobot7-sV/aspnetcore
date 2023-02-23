@@ -113,7 +113,7 @@ internal class DeveloperExceptionPageMiddlewareImpl
                 return;
             }
 
-            _logger.UnhandledException(ex);
+            DiagnosticsTelemetry.ReportUnhandledException(_logger, context, ex);
 
             if (context.Response.HasStarted)
             {

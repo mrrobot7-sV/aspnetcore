@@ -35,7 +35,7 @@ public class ApiTemplateTest : LoggedTest
         await ApiTemplateCore(languageOverride: null);
     }
 
-    [ConditionalFact(Skip = "Unskip when there are no more build or publish warnings for native AOT.")]
+    [ConditionalFact]
     public async Task ApiTemplateNativeAotCSharp()
     {
         await ApiTemplateCore(languageOverride: null, args: new[] { ArgConstants.PublishNativeAot });
@@ -47,7 +47,7 @@ public class ApiTemplateTest : LoggedTest
         await ApiTemplateCore(languageOverride: null, args: new[] { ArgConstants.UseProgramMain });
     }
 
-    [ConditionalFact(Skip = "Unskip when there are no more build or publish warnings for native AOT.")]
+    [ConditionalFact]
     public async Task ApiTemplateProgramMainNativeAotCSharp()
     {
         await ApiTemplateCore(languageOverride: null, args: new[] { ArgConstants.UseProgramMain, ArgConstants.PublishNativeAot });
